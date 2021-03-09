@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TonySetTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-09T18:45:51" hostname="Tonys-MacBook-Pro.local" time="0.015">
+  <properties/>
+  <testcase name="addUniqueItems()" classname="TonySetTest" time="0.011"/>
+  <testcase name="addItems()" classname="TonySetTest" time="0.002"/>
+  <testcase name="createEmptySet()" classname="TonySetTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
