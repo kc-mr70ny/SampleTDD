@@ -35,4 +35,26 @@ public class TonySetTest {
         ts.add("item5");
         assertArrayEquals(new Object[] {"item1","item2","item3","item4","item5"}, ts.oarr);
     }
+
+    @Test
+    void addDuplicates() {
+        TonySet ts = new TonySet();
+        ts.add("item1");
+        ts.add("item2");
+        ts.add("item3");
+        ts.add("item4");
+        ts.add("item4");
+        assertArrayEquals(new Object[] {"item1","item2","item3","item4",null},ts.oarr);
+    }
+
+    @Test
+    void remove() {
+        TonySet ts = new TonySet();
+        ts.add("item1");
+        ts.add("item2");
+        ts.add("item3");
+        ts.add("item4");
+        ts.remove("item2");
+        assertArrayEquals(new Object[] {"item1","item3","item4",null,null},ts.oarr);
+    }
 }
