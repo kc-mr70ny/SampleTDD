@@ -1,27 +1,24 @@
-import javax.sound.midi.Soundbank;
-
 public class TonySet {
 
     private int size = 0;
-    Object[] oarr = new Object[5];
+    Object[] objArr = new Object[5];
 
     public boolean isEmpty() {
         return size == 0;
     }
 
     public boolean isExist(Object other) {
-        boolean exist = false;
-        for(int i=0;i<oarr.length;i++){
-            if(other.equals(oarr[i])){
+        for (Object o : objArr) {
+            if (other.equals(o)) {
                 return true;
             }
         }
-        return exist;
+        return false;
     }
 
     public void add(Object other) {
         if(!isExist(other)){
-            oarr[size] = other;
+            objArr[size] = other;
             size++;
         }
     }
@@ -31,16 +28,9 @@ public class TonySet {
     }
 
     public void remove(Object other) {
-        boolean ind = false;
         if(isExist(other)){
-            for(int i=0;i<oarr.length-1;i++){
-                if(other.equals(oarr[i]) || ind){
-                    oarr[i] = oarr[i+1];
-                    //Once the indicator is true shift the elements
-                    ind = true;
-                }else{
-                    oarr[i] = oarr[i];
-                }
+            for(int i = 0; i < objArr.length; i++){
+                if(other.equals(objArr[i])){ objArr[i] = null; }
             }
         }
     }
