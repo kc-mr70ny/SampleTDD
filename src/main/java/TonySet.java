@@ -30,8 +30,21 @@ public class TonySet {
     public void remove(Object other) {
         if(isExist(other)){
             for(int i = 0; i < objArr.length; i++){
-                if(other.equals(objArr[i])){ objArr[i] = null; }
+                if(other.equals(objArr[i])){
+                    objArr[i] = null;
+                    size--;
+                }
             }
         }
+    }
+
+    public Object[] RemoveNulls(Object[] other) {
+        Object[] objArr = new Object[size];
+        for(int i=0;i<other.length;i++){
+            if(size > 0 && other[i] != null){
+                objArr[i] = other[i];
+            }
+        }
+        return objArr;
     }
 }
