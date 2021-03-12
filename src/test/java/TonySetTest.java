@@ -26,15 +26,10 @@ import static org.junit.jupiter.api.Assertions.*;
         assertArrayEquals(new Object[] {"item1","item2","item3","item4","item5"}, ts.objArr);
         assertEquals(5,ts.size());
         ts.remove("item2");//Removed item2
-        assertArrayEquals(new Object[] {"item1",null,"item3","item4","item5"},ts.objArr);
+        assertArrayEquals(new Object[] {"item1","item5","item3","item4",null},ts.objArr);
         assertEquals(4,ts.size());
-    }
-
-    @Test
-    void removeNulls(){
-        TonySet ts = new TonySet();
-        ts.add("item1");
-        ts.add("item2");
-        assertArrayEquals(new Object[] {"item1","item2"},ts.RemoveNulls(ts.objArr));
+        ts.remove("item3");//Removed item2
+        assertArrayEquals(new Object[] {"item1","item5","item4",null,null},ts.objArr);
+        assertEquals(3,ts.size());
     }
 }
